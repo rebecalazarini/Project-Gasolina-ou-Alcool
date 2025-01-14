@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Calculadora de preço da Gasolina ou Alcool">
+    <title>Project Calculadora Alcool ou Gasolina</title>
+</head>
+<body>
+    <h2 class="container">Calculadora de Alcool ou Gasolina</h2>
+    <main>
+
+    <img class="logo" src="./logo.png">
+
+    <h2 class="title">Qual a melhor opção?</h2>
+
+    <form onsubmit="Calcular(event)" class="form">
+
+        <label>Álcool (preço por litro):</label>
+        <input id="alcool" class="input" type="number" placeholder="4.90" min="1" step="0.01" required>
+
+        <label>Gasolina (preço por litro):</label>
+        <input id="gasolina" class="input" type="number" placeholder="6.50" min="1" step="0.01" required>
+
+        <input class="button" type="submit" value="Calcular">
+    </form>
+
+    <section id="content-result" class="section hide">
+        <span id="resultado" class="resultado">Compensa usar Álcool</span>
+        <span id="al">Álcool R$3.90</span>
+        <span id="ga">Gasolina R$6.80</span>
+    </section>
+    </main>
+
+    <div class="info">
+        <span class="tooltip">veja como é feito o cálculo</span>
+        <a href="sobre.html">
+            <img class="infoimg" src="info.png">
+        </a>
+    </div>
+
+    <style>
+        * {
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(20, 20, 20);
+            height: 60vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h2 {
+            color: aliceblue;
+            font-size: 50px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .title {
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+            text-align: center;
+            margin: 24px 0;
+        }
+        main {
+            max-width: 720px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 14px;
+        }
+        .logo {
+            max-width: 227px;
+        }
+        .container {
+            font-size: 50px;
+            margin: 24px 0;
+            font-family: georgia;
+        }
+        .form label {
+            color: white;
+            font-size: 20px;
+        }
+        .input {
+            width: 100%;
+            height: 48px;
+            border-radius: 4px;
+            font-size: 20px;
+            padding: 0 14px;
+            margin-top: 8px;
+            margin-bottom: 16px;
+        }
+        .button {
+            width: 100%;
+            height: 48px;
+            background-color: rgb(195, 43, 226);
+            cursor: pointer;
+            border: 0;
+            border-radius: 4px;
+            color: aliceblue;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .section {
+            background-color: rgb(214, 71, 233);
+            max-width: 520px;
+            padding: 20px 28px;
+            text-align: center;
+            margin-top: 28px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ffffff;
+            user-select: none;
+        }
+        .section:hover {
+            transform: scale(1.1);
+            color: #000000;
+            background-color: aliceblue;
+            transition: 0.8s;
+        }
+        .hide {
+            display: none;
+        }
+        .resultado span {
+            margin-bottom: 12px;
+        }
+        .resultado {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .info {
+            position: fixed;
+            right: 14px;
+            bottom: 22px;
+        }
+        .infoimg {
+            width: 66px;
+            height: 66px;
+        }
+        .tooltip {
+            background-color: aquamarine;
+            color: black;
+            padding: 10px 8px;
+            border-radius: 4px;
+            position: relative;
+            bottom: 28px;
+            display: none;
+        }
+        .info:hover .tooltip {
+            display: inline;
+        }
+    </style>
+
+    <script>
+        function Calcular(event) {
+            event.preventDefault();
+
+            let alcoolInput = document.getElementById("alcool").value;
+            let gasolinaInput = document.getElementById("gasolina").value;
+            let contentResult = document.getElementById("content-result");
+            let resultado = document.getElementById("resultado");
+            let alSpan = document.getElementById("al");
+            let gaSpan = document.getElementById("ga");
+
+            let calculo = (alcoolInput / gasolinaInput);
+
+            if (calculo < 0.7) {
+                resultado.innerHTML = "Compensa usar álcool";
+            } else {
+                resultado.innerHTML = "Compensa usar gasolina";
+            }
+            gaSpan.innerHTML = "Gasolina R$ " + gasolinaInput;
+            alSpan.innerHTML = "Álcool R$ " + alcoolInput;
+
+            contentResult.classList.remove("hide");
+        }
+    </script>
+</body>
+</html>

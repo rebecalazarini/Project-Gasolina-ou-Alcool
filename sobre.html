@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como o calculo é feito</title>
+</head>
+<body>
+    <h2>Como o calculo é feito?</h2>
+
+    <main class="container">
+        <img class="logo" src="logo.png">
+        <h2 class="title">Entenda o calculo</h2>
+
+        <section class="sobre">
+            <p>Dividimos o valor do litro pelo valor da gasolina</p>
+            <p>Quando o resultado é menor 0.7, a recomendação é abastecer com alcool. Se maior 
+                a recomendação é escolher gasolina </p>
+        </section>
+
+        <a class="button" href="index.html">Voltar</a>
+    </main>
+    <style>
+         * {
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(20, 20, 20);
+            height: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h2 {
+            color: aliceblue;
+            font-size: 50px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .title {
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+            text-align: center;
+            margin: 24px 0;
+        }
+        main {
+            max-width: 720px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 14px;
+        }
+        .logo {
+            max-width: 227px;
+        }
+        .container {
+            font-size: 50px;
+            margin: 24px 0;
+            font-family: georgia;
+        }
+        
+        .section {
+            background-color: rgb(214, 71, 233);
+            max-width: 520px;
+            padding: 20px 28px;
+            text-align: center;
+            margin-top: 28px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ffffff;
+            user-select: none;
+        }
+        .section:hover {
+            transform: scale(1.1);
+            color: #000000;
+            background-color: aliceblue;
+            transition: 0.8s;
+        }
+        .hide {
+            display: none;
+        }
+        .resultado span {
+            margin-bottom: 12px;
+        }
+        .resultado {
+            font-size: 20px;
+            font-weight: bold;
+        }
+       .sobre{
+        font-size: 20px;
+        color: #000000;
+        max-width: 620px;
+        padding: 24px 14px;
+        background-color: bisque;
+        border: 1px solid;
+        border-radius: 4px;
+       }
+
+       .sobre p{
+        color: #000000;
+        margin-bottom: 0.1px;
+        line-height: 100px;
+       }
+       .button  {
+        margin-top: 16px;
+        width: 78%;
+        height: 48px;
+        background-color: rgb(255, 255, 255);
+        border: 0;
+        border-radius: 4px;
+        color: rgb(0, 0, 0);
+        font-size: 22px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        }
+
+        .button:hover{
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+</body>
+</html>
